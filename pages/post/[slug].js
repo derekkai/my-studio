@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import sanityClient from "../client";
+import sanityClient from "../../client";
 
 
 const Post = ({ title, image}) => {

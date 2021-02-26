@@ -1,4 +1,4 @@
-import sanityClient from "./client";
+import sanityClient from "../client";
 import Link from 'next/link'
 
 const post = ({data}) => {
