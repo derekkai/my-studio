@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react';
 import sanityClient from "../../client";
 
-
 const Post = ({ title, image}) => {
     console.log(title, image);
     return <div>
