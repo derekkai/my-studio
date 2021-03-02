@@ -1,8 +1,5 @@
 import {useState, useEffect} from 'react';
-import Link from 'next/link';
 import sanityClient from "../client";
-import Nav from "../components/Nav";
-import Background from "../components/Background";
 import Greeting from "../components/Greeting";
 import {CSSTransition} from 'react-transition-group';
 import TopFrame from "../components/TopFrame";
@@ -12,18 +9,10 @@ import PersonalFrame from "../components/PersonalFrame";
 const Home = ({image}) => {
     const [enter, setEnter] = useState(false);
     const [TopFrameActive, setTopFrameActive] = useState(false);
-    // const [PersonalFrameActive, setPersonalFrameActive] = useState();
-
 
     const enterHandle = () => {
         setEnter(true);
     }
-
-    useEffect(() => {
-        setTimeout(() => {
-            setTopFrameActive(true)
-        }, 2000);
-    }, []);
 
     const handleGreetingExited = () => {
         document.documentElement.style.overflowY = 'auto';
