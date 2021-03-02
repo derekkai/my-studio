@@ -10,8 +10,7 @@ const LINE1_DELAY_DATA2 = [500, 800, 100, 100, 100, 100, 100, 200, 100, 100, 100
 
 const delay = ms => new Promise(res => setTimeout(res, ms))
 
-const Greeting = () => {
-    const [enter, setEnter] = useState(false);
+const Greeting = ({ onEnter, enter }) => {
     const [currentLine, setCurrent] = useState(1);
     const [line1, setLine1] = useState('');
     const [line2, setLine2] = useState('');
@@ -35,11 +34,7 @@ const Greeting = () => {
         }
 
         await delay(1000);
-        enterHandler();
-    }
-
-    const enterHandler = () => {
-        setEnter(true);
+        onEnter();
     }
 
     useEffect(() => {
@@ -51,7 +46,7 @@ const Greeting = () => {
             <div className={classNames(style.top, enter && style.shrink)}>
                 <div className={classNames(style.divider, enter && style.extend)} />
             </div>
-            <div className={enter && style.shrink}>
+            <div className={classNames(enter && style.shrink)}>
                 <div className={classNames(style.divider, enter && style.extend)} />
             </div>
         </div>

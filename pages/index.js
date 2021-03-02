@@ -1,16 +1,51 @@
-import sanityClient from "../client";
+import {useState, useEffect} from 'react';
 import Link from 'next/link';
+import sanityClient from "../client";
+import Nav from "../components/Nav";
 import Background from "../components/Background";
 import Greeting from "../components/Greeting";
+import {CSSTransition} from 'react-transition-group';
+import TopFrame from "../components/TopFrame";
+import PersonalFrame from "../components/PersonalFrame";
 
 const Home = ({image}) => {
+    const [enter, setEnter] = useState(false);
+    const [TopFrameActive, setTopFrameActive] = useState(false);
+    // const [PersonalFrameActive, setPersonalFrameActive] = useState();
+
+
+    const enterHandle = () => {
+        setEnter(true);
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setTopFrameActive(true)
+        }, 2000);
+
+        // window.addEventListener('scroll', function (e) {
+        //     window.scrollY
+        // });
+    }, []);
+
+    const handleGreetingExited = () => {
+        document.documentElement.style.overflowY = 'auto';
+        setTopFrameActive(true);
+
+    }
 
     return (
         <div>
-            <Greeting />
-            <Link href="/post">Post</Link>
-            <Background url={image.asset.url}/>
-            <div style={{width: '100vw', height: '2000px'}}/>
+            <CSSTransition
+                in={!enter}
+                timeout={2000}
+                unmountOnExit
+                onExited={handleGreetingExited}
+            >
+                <Greeting onEnter={enterHandle} enter={enter}/>
+            </CSSTransition>
+            <TopFrame image={image} active={TopFrameActive}/>
+            <PersonalFrame />
         </div>
     )
 }

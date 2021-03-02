@@ -1,0 +1,31 @@
+$skill-colors: (
+        'React': #48cef7,
+        'Redux': #7248b6,
+        'Electron': #9ae3f1,
+        'Webpack': #165fad,
+        'NodeDotJs': #43853d,
+        'Java': #e61f24,
+        'VueDotJs': #3db27f,
+        'Angular': #d5002e,
+        'Docker': #2391e6,
+        'Nginx': #009137,
+        'Sass': #c96195,
+);
+
+$social-colors: (
+        'Github': #1a1e22,
+        'Linkedin': #0a63bc,
+        'Medium': #000000,
+);
+
+@each $name, $color in $skill-colors {
+  .icon-#{$name} {
+    color: $color;
+  }
+}
+
+@each $name, $color in $social-colors {
+  .icon-#{$name} {
+    color: $color;
+  }
+}

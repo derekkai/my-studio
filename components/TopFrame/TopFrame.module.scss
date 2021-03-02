@@ -1,0 +1,89 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medium-words {
+  opacity: 0;
+  > div {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1.2, 3);
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 2;
+}
+
+.top-word {
+  height: 80px;
+  line-height: 80px;
+  transform-origin: right bottom;
+  transform: rotate(90deg);
+  opacity: 0;
+  > div {
+    text-align: right;
+    font-size: 60px;
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1, 1.5);
+  }
+}
+
+.bottom-word {
+  height: 80px;
+  line-height: 80px;
+  opacity: 0;
+  transform: translateY(20px);
+  > div {
+    text-align: right;
+    font-size: 60px;
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1, 1.5);
+  }
+}
+
+.active {
+  .medium-words {
+    transition: opacity .3s ease-in-out .5s;
+    opacity: 1;
+    animation-name: shake;
+    animation-duration: .3s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .top-word {
+    opacity: 1;
+    transition: transform .3s cubic-bezier(0.52, 0.01, 0, 1) .8s;
+    transform: rotate(0deg);
+  }
+
+  .bottom-word {
+    transition-property: opacity, transform;
+    transition-duration: 0s, .3s;
+    transition-delay: 200ms, 200ms;
+    transition-timing-function: cubic-bezier(0.52, 0.01, 0, 1);
+    opacity: 1;
+    transform: translateY(50px);
+  }
+}
+
+@keyframes shake {
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
