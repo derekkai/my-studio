@@ -23,10 +23,6 @@ const Home = ({image}) => {
         setTimeout(() => {
             setTopFrameActive(true)
         }, 2000);
-        handleGreetingExited();
-        // window.addEventListener('scroll', function (e) {
-        //     window.scrollY
-        // });
     }, []);
 
     const handleGreetingExited = () => {
@@ -36,14 +32,14 @@ const Home = ({image}) => {
 
     return (
         <div>
-            {/*<CSSTransition*/}
-            {/*    in={!enter}*/}
-            {/*    timeout={2000}*/}
-            {/*    unmountOnExit*/}
-            {/*    onExited={handleGreetingExited}*/}
-            {/*>*/}
-            {/*    <Greeting onEnter={enterHandle} enter={enter}/>*/}
-            {/*</CSSTransition>*/}
+            <CSSTransition
+                in={!enter}
+                timeout={2000}
+                unmountOnExit
+                onExited={handleGreetingExited}
+            >
+                <Greeting onEnter={enterHandle} enter={enter}/>
+            </CSSTransition>
             <TopFrame image={image} active={TopFrameActive}/>
             <PersonalFrame />
             <SkillFrame />
