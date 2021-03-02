@@ -6,6 +6,7 @@ import Background from "../components/Background";
 import Greeting from "../components/Greeting";
 import {CSSTransition} from 'react-transition-group';
 import TopFrame from "../components/TopFrame";
+import SkillFrame from "../components/SkillFrame";
 import PersonalFrame from "../components/PersonalFrame";
 
 const Home = ({image}) => {
@@ -22,7 +23,7 @@ const Home = ({image}) => {
         setTimeout(() => {
             setTopFrameActive(true)
         }, 2000);
-
+        handleGreetingExited();
         // window.addEventListener('scroll', function (e) {
         //     window.scrollY
         // });
@@ -31,21 +32,21 @@ const Home = ({image}) => {
     const handleGreetingExited = () => {
         document.documentElement.style.overflowY = 'auto';
         setTopFrameActive(true);
-
     }
 
     return (
         <div>
-            <CSSTransition
-                in={!enter}
-                timeout={2000}
-                unmountOnExit
-                onExited={handleGreetingExited}
-            >
-                <Greeting onEnter={enterHandle} enter={enter}/>
-            </CSSTransition>
+            {/*<CSSTransition*/}
+            {/*    in={!enter}*/}
+            {/*    timeout={2000}*/}
+            {/*    unmountOnExit*/}
+            {/*    onExited={handleGreetingExited}*/}
+            {/*>*/}
+            {/*    <Greeting onEnter={enterHandle} enter={enter}/>*/}
+            {/*</CSSTransition>*/}
             <TopFrame image={image} active={TopFrameActive}/>
             <PersonalFrame />
+            <SkillFrame />
         </div>
     )
 }

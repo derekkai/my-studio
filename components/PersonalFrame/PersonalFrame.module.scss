@@ -2,10 +2,11 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: #24282e;
+  background: #5a6265;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .photo {
@@ -22,9 +23,10 @@
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  > * {
+  > *:not(:first-child) {
     margin-left: 25px;
   }
+
 }
 
 .content {
@@ -44,9 +46,11 @@
 
 .active {
   .photo {
+    position: relative;
     transition: all .3s linear;
     opacity: 1;
     transform: translateX(0);
+    z-index: 1;
   }
 }
 

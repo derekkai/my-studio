@@ -1,5 +1,5 @@
 import {useEffect, useState, useRef} from 'react'
-import { FaChevronDown } from 'react-icons/fa';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import SocialIcon from "../SocialIcon";
 import classNames from 'classnames';
 import JobCard from "../JobCard";
@@ -48,13 +48,20 @@ const socials = [
     },
 ];
 
+const socialLast = [
+    {
+        name: 'Medium',
+        link: 'https://medium.com/me/stories/drafts',
+    },
+]
+
 const PersonalFrame = () => {
     const [active, setActive] = useState(false);
     const frameEL = useRef(null);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (!active && frameEL.current && (frameEL.current.offsetHeight - window.scrollY) < 100) {
+            if (!active && frameEL.current && (frameEL.current.offsetHeight - window.scrollY) < 300) {
                 setActive(true);
             }
         });
@@ -64,11 +71,26 @@ const PersonalFrame = () => {
         <div ref={frameEL} className={classNames(style.container, active && style.active)}>
             <div className={style.profile}>
                 <div className={style.photo}/>
-                <div className={style['social-icons']}>
+                <TransitionGroup className={style['social-icons']}>
                     {
-                        socials.map(el => <SocialIcon key={el.name} name={el.name} link={el.link} />)
+                        active && socials.map(el =>
+                            <CSSTransition timeout={1300} classNames={classNames('social-icon')}>
+                                <div>
+                                    <SocialIcon key={el.name} name={el.name} link={el.link}/>
+                                </div>
+                            </CSSTransition>,
+                        )
                     }
-                </div>
+                    {
+                        active && socialLast.map(el =>
+                            <CSSTransition timeout={3800} classNames={classNames('social-icon-last')}>
+                                <div>
+                                    <SocialIcon key={el.name} name={el.name} link={el.link}/>
+                                </div>
+                            </CSSTransition>,
+                        )
+                    }
+                </TransitionGroup>
             </div>
             <div className={style.content}>
                 <div className={style.title}>experience</div>

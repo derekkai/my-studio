@@ -37,8 +37,6 @@ const JobCard = ({ data }) => {
                 </div>
                 {current && <div className={style.tips}>🥇 Current job</div>}
             </div>
-            <div className={style.back}>
-            </div>
         </Card>
     )
 }

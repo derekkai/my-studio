@@ -29,3 +29,55 @@ $social-colors: (
     color: $color;
   }
 }
+
+.social-icon-enter {
+  opacity: 0;
+}
+
+.social-icon-enter-active {
+  opacity: 1;
+  transition: opacity .3s ease-in .5s;
+  transform: translateY(-130px);
+  animation: fall 0.3s 1 cubic-bezier(0.37, -0.01, 0, 1.01) 1s forwards,
+}
+
+.social-icon-last-enter {
+  opacity: 0;
+}
+
+.social-icon-last-enter-active {
+  opacity: 1;
+  transition: opacity .3s ease-in .5s;
+  transform: translateY(-130px) rotate(45deg);
+  transform-origin: right bottom;
+  animation: fall2 0.3s 1 cubic-bezier(0.37, -0.01, 0, 1.01) 1s,
+  rotate 1s 1 cubic-bezier(0.37, -0.01, 0, 1.01) 1.2s forwards
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-130px)
+  }
+  to {
+    transform: translateY(0px)
+  }
+}
+
+@keyframes fall2 {
+  from {
+    transform: translateY(-130px) rotate(45deg);
+  }
+  to {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateY(0px) rotate(45deg);
+  }
+  to {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
