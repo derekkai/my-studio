@@ -1,0 +1,90 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #002c37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud-area {
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  width: 100vw;
+  height: 150px;
+  background: url('../../public/cloud.png') center / contain repeat-x;
+}
+
+.title {
+  position: absolute;
+  left: 70px;
+  top: 200px;
+  > text {
+    font-size: 64px;
+    font-weight: normal;
+    text-transform: uppercase;
+    fill: #ffffff;
+    stroke: #ff0000;
+    stroke-width: 2px;
+    text-shadow: 0 0 20px #ff0000;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  max-height: 700px;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  justify-content: flex-start;
+  > .item {
+    margin: 10px;
+  }
+}
+
+.block {
+  display: flex;
+  margin-top: 50px;
+  z-index: 1;
+}
+
+.generator {
+  height: 110px;
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  right: 200px;
+  cursor: pointer;
+  &.active {
+    animation: jitter .2s infinite linear;
+  }
+}
+
+.line-container {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  right: 300px;
+  > div {
+    width: 400px;
+    height: 600px;
+    border-left: 8px solid black;
+    border-bottom: 8px solid black;
+    border-bottom-left-radius: 30px;
+    margin-right: -30px;
+  }
+}
+
+@keyframes jitter {
+  0% {
+    transform: translateY(1px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+  100% {
+    transform: translateY(1px);
+  }
+}

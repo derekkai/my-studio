@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  transform: skewX(-30deg);
+  margin: 10px;
+  filter: brightness(0);
+
+  > .word {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 36px;
+    transform: skewX(30deg);
+    text-align: center;
+    flex-grow: 1;
+  }
+}
+
+.open {
+  animation: flicker 0.8s 1 steps(1, end) 0s forwards;
+}
+
+.level4 {
+  background: linear-gradient(#002c37, #8a871b 90%);
+  box-shadow: 0 0 6px 3px #f9ff98;
+  border: 2px solid #efff00;
+}
+
+.level3 {
+  background: linear-gradient(#002c37, #881b8a 90%);
+  box-shadow: 0px 0px 6px 3px #fd98ff;
+  border: 2px solid #ff00f7;
+}
+
+.level2 {
+  background: linear-gradient(#002c37, #221b8a 90%);
+  box-shadow: 0 0 6px 3px #9a98ff;
+  border: 2px solid #0400ff;
+}
+
+
+@keyframes flicker {
+  0% {
+    filter: brightness(1);
+  }
+  10% {
+    filter: brightness(0);
+  }
+  20% {
+    filter: brightness(1);
+  }
+  30% {
+    filter: brightness(0);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}

@@ -3,7 +3,7 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import SocialIcon from "../SocialIcon";
 import classNames from 'classnames';
 import JobCard from "../JobCard";
-import style from './PersonalFrame.module.scss';
+import style from './PersonalPage.module.scss';
 
 const job1 = {
     icon: 'work1.png',
@@ -55,7 +55,7 @@ const socialLast = [
     },
 ]
 
-const PersonalFrame = () => {
+const PersonalPage = () => {
     const [active, setActive] = useState(false);
     const frameEL = useRef(null);
 
@@ -104,4 +104,4 @@ const PersonalFrame = () => {
     )
 }
 
-export default PersonalFrame;
+export default PersonalPage;

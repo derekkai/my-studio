@@ -2,9 +2,9 @@ import {useState, useEffect} from 'react';
 import sanityClient from "../client";
 import Greeting from "../components/Greeting";
 import {CSSTransition} from 'react-transition-group';
-import TopFrame from "../components/TopFrame";
-import SkillFrame from "../components/SkillFrame";
-import PersonalFrame from "../components/PersonalFrame";
+import TopPage from "../components/TopPage";
+import SkillPage from "../components/SkillPage";
+import PersonalPage from "../components/PersonalPage";
 
 const Home = ({image}) => {
     const [enter, setEnter] = useState(false);
@@ -29,9 +29,9 @@ const Home = ({image}) => {
             >
                 <Greeting onEnter={enterHandle} enter={enter}/>
             </CSSTransition>
-            <TopFrame image={image} active={TopFrameActive}/>
-            <PersonalFrame />
-            <SkillFrame />
+            <TopPage image={image} active={TopFrameActive}/>
+            <PersonalPage />
+            <SkillPage />
         </div>
     )
 }

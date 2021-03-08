@@ -1,11 +1,11 @@
 import { useState, useEffect} from 'react';
 import classNames from 'classnames';
 import Nav from "../Nav";
-import style from './TopFrame.module.scss';
+import style from './TopPage.module.scss';
 import sanityClient from "../../client";
 import Background from "../Background";
 
-const TopFrame = ({image, active}) => {
+const TopPage = ({image, active}) => {
 
     return <div className={style.container}>
         <Nav />
@@ -24,4 +24,4 @@ const TopFrame = ({image, active}) => {
     </div>
 }
 
-export default TopFrame;
+export default TopPage;
