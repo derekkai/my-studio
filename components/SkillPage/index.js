@@ -18,7 +18,7 @@ const SkillPage = () => {
     }
 
     return (
-        <div className={style.container}>
+        <div id="skill" className={style.container}>
             <div className={style['cloud-area']}/>
             <div className={style.block}>
                 <svg className={style.title} width="300" height="100">

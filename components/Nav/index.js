@@ -4,12 +4,11 @@ import style from './Nav.module.scss'
 const Nav = () => {
 
     return <nav className={style.nav}>
-        <Image
-            src="/name.png"
-            alt="Picture of the author"
-            width={133}
-            height={59}
-        />
+        <ul className={style['nav-items']}>
+            <li><a href="#profile">profile</a></li>
+            <li><a href="#skill">skill</a></li>
+        </ul>
+
     </nav>
 }
 

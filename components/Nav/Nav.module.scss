@@ -9,3 +9,14 @@
   justify-content: space-around;
   z-index: 1;
 }
+
+.nav-items {
+  display: flex;
+  > li {
+    font-size: 40px;
+    color: white;
+    font-family: 'Ravi Prakash', cursive;
+    text-transform: uppercase;
+    margin-right: 40px;
+  }
+}

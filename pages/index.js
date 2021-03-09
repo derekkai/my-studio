@@ -1,10 +1,10 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import sanityClient from "../client";
 import Greeting from "../components/Greeting";
 import {CSSTransition} from 'react-transition-group';
 import TopPage from "../components/TopPage";
 import SkillPage from "../components/SkillPage";
-import PersonalPage from "../components/PersonalPage";
+import ProfilePage from "../components/ProfilePage";
 
 const Home = ({image}) => {
     const [enter, setEnter] = useState(false);
@@ -30,7 +30,7 @@ const Home = ({image}) => {
                 <Greeting onEnter={enterHandle} enter={enter}/>
             </CSSTransition>
             <TopPage image={image} active={TopFrameActive}/>
-            <PersonalPage />
+            <ProfilePage />
             <SkillPage />
         </div>
     )
