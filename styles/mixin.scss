@@ -3,13 +3,18 @@ $skill-colors: (
         'Redux': #7248b6,
         'Electron': #9ae3f1,
         'Webpack': #165fad,
-        'NodeDotJs': #43853d,
+        'Node': #43853d,
         'Java': #e61f24,
-        'VueDotJs': #3db27f,
+        'Vue': #3db27f,
         'Angular': #d5002e,
         'Docker': #2391e6,
         'Nginx': #009137,
         'Sass': #c96195,
+        'JavaScript': #E9D650,
+        'Next': #1D262C,
+        'TypeScript': #0076C6,
+        'GraphQL': #DD34A6,
+        'Jest': #934058,
 );
 
 $social-colors: (
@@ -21,6 +26,13 @@ $social-colors: (
 @each $name, $color in $skill-colors {
   .icon-#{$name} {
     color: $color;
+  }
+
+  .skill-card-#{$name} {
+    border-color: $color;
+    &::before {
+      background-color: $color;
+    }
   }
 }
 

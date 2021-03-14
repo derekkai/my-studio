@@ -4,13 +4,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   z-index: 9999;
 }
 
 .curtain {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
 
   > div {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     background: #000;
     &.shrink {
@@ -68,7 +68,7 @@
   background: #fff;
   &.extend {
     transition: width 1s ease-in-out;
-    width: 100vw;
+    width: 100%;
   }
   .top & {
     bottom: 0;

@@ -1,10 +1,11 @@
 import {useState} from 'react';
 import sanityClient from "../client";
 import Greeting from "../components/Greeting";
+import ProfilePage from "../components/ProfilePage";
 import {CSSTransition} from 'react-transition-group';
 import TopPage from "../components/TopPage";
-import SkillPage from "../components/SkillPage";
-import ProfilePage from "../components/ProfilePage";
+import SkillList from "../components/SkillList";
+import style from '../styles/Home.module.css';
 
 const Home = ({image}) => {
     const [enter, setEnter] = useState(false);
@@ -15,12 +16,12 @@ const Home = ({image}) => {
     }
 
     const handleGreetingExited = () => {
-        document.documentElement.style.overflowY = 'auto';
+        document.documentElement.style.overflow = 'auto';
         setTopFrameActive(true);
     }
 
     return (
-        <div>
+        <div className={style.container}>
             <CSSTransition
                 in={!enter}
                 timeout={2000}
@@ -31,7 +32,7 @@ const Home = ({image}) => {
             </CSSTransition>
             <TopPage image={image} active={TopFrameActive}/>
             <ProfilePage />
-            <SkillPage />
+            <SkillList />
         </div>
     )
 }

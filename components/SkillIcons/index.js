@@ -1,13 +1,23 @@
 import React from 'react'
 import classNames from 'classnames';
 import style from './SkillIcons.module.scss';
-import * as SimpleIcons  from 'react-icons/si';
+import { reactIconNameMap } from "../../constants";
+import * as SimpleIcons from 'react-icons/si';
 
-const SkillIcons = ({ name }) => {
-    const iconName = 'Si' + name;
+const SkillIcons = ({name, color, className, disableTips}) => {
+    const customStyle = {color};
+    const iconName = 'Si' + reactIconNameMap[name];
     if (SimpleIcons[iconName]) {
         const icon = React.createElement(SimpleIcons[iconName]);
-        return <div className={classNames(style.container, `icon-${name}`)} data-name={name} >{icon}</div>
+        return <div style={color && customStyle}
+                    className={
+                        classNames(
+                            style.container,
+                            `icon-${name}`,
+                            className && className,
+                            disableTips && style.disableTips
+                        )}
+                    data-name={name}>{icon}</div>
     }
     return null;
 }

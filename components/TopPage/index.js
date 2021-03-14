@@ -1,9 +1,8 @@
-import { useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
+import Background from "../Background";
 import classNames from 'classnames';
 import Nav from "../Nav";
 import style from './TopPage.module.scss';
-import sanityClient from "../../client";
-import Background from "../Background";
 
 const TopPage = ({image, active}) => {
 

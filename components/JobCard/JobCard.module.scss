@@ -1,4 +1,6 @@
-
+.container {
+  backface-visibility: hidden;
+}
 .header {
   display: flex;
   align-items: center;

@@ -1,12 +1,13 @@
 .container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 1200px;
   background: #5a6265;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  flex-direction: column;
 }
 
 .photo {
@@ -32,7 +33,6 @@
 .content {
   color: #fff;
   font-size: 20px;
-  margin-left: 150px;
   .title {
     font-size: 40px;
     text-transform: uppercase;

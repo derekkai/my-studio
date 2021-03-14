@@ -1,6 +1,9 @@
 .container {
   position: relative;
   font-size: 32px;
+  display: flex;
+  align-items: center;
+
   &::after {
     opacity: 0;
     content: attr(data-name);
@@ -18,5 +21,11 @@
       opacity: 1;
       transition: all .3s linear;
     }
+  }
+}
+
+.disableTips {
+  &::after {
+    content: none;
   }
 }

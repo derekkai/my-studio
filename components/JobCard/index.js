@@ -7,7 +7,7 @@ const JobCard = ({ data }) => {
     const { icon, companyName, jobName, experience, content, skill, current  } = data;
     return (
         <Card>
-            <div className={style.front}>
+            <div className={style.container}>
                 <div className={style.header}>
                     <Image src={`/${icon}`} width={119} height={43}/>
                     <div className={style.block}>
