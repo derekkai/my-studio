@@ -6,6 +6,7 @@ import {CSSTransition} from 'react-transition-group';
 import TopPage from "../components/TopPage";
 import SkillList from "../components/SkillList";
 import style from '../styles/Home.module.css';
+import Nav from "../components/Nav";
 
 const Home = ({image}) => {
     const [enter, setEnter] = useState(false);
@@ -30,6 +31,7 @@ const Home = ({image}) => {
             >
                 <Greeting onEnter={enterHandle} enter={enter}/>
             </CSSTransition>
+            <Nav title="Derek's Website"/>
             <TopPage image={image} active={TopFrameActive}/>
             <ProfilePage />
             <SkillList />

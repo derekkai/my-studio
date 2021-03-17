@@ -12,7 +12,7 @@ const ProfilePage = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (!active && frameEL.current && (frameEL.current.offsetHeight - window.scrollY) < 300) {
+            if (!active && frameEL.current && (document.documentElement.offsetHeight / window.scrollY) < 5)  {
                 setActive(true);
             }
         });

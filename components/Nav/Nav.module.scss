@@ -19,5 +19,20 @@
     font-family: 'Ravi Prakash', cursive;
     text-transform: uppercase;
     margin-right: 40px;
+    transition: color .3s  ease-in-out;
+    &:hover {
+      color: #225F72;
+    }
+    &.active {
+      color: #328BA7;
+    }
   }
+}
+
+.title {
+  font-size: 34px;
+  margin-bottom: 15px;
+  color: #48cef7;
+  text-transform: uppercase;
+  font-family: 'Fascinate', cursive;
 }

@@ -70,3 +70,14 @@ export const mySkillListData = [
     {level: 2, data: ['Vue', 'Electron', 'Node', 'GraphQL', 'TypeScript', 'Java']},
     {level: 1, data: ['Jest', 'Docker', 'Nginx', 'Angular']},
 ];
+
+export const navData = [
+    {
+        page: 'home',
+        path: '/',
+    },
+    {
+        page: 'portfolio',
+        path: '/portfolio'
+    }
+];

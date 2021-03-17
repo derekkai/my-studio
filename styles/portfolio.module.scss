@@ -1,0 +1,59 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: grayscale(1);
+    background: url("../public/esport-bg.png") center / cover no-repeat;
+  }
+}
+
+.container {
+  z-index: 1;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.pc {
+  position: relative;
+  width: 700px;
+  height: 350px;
+  background: url("../public/esport-pc.png") center / cover no-repeat;
+  box-shadow: -6px -6px 15px 0px #000000;
+  overflow: hidden;
+}
+
+.h51 {
+  position: absolute;
+  bottom: -35px;
+  right: 50px;
+  width: 133px;
+  height: 250px;
+  background: url("../public/esport-mobile.png") center / cover no-repeat;
+  box-shadow: -6px -6px 15px 0px #000000;
+}
+
+.h52 {
+  position: absolute;
+  bottom: -35px;
+  right: 200px;
+  width: 133px;
+  height: 250px;
+  background: url("../public/esport-mobile-old.png") center / cover no-repeat;
+  box-shadow: -6px -6px 15px 0px #000000;
+}
+

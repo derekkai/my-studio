@@ -7,7 +7,6 @@ import style from './TopPage.module.scss';
 const TopPage = ({image, active}) => {
 
     return <div className={style.container}>
-        <Nav />
         <Background url={image.asset.url} />
         <div className={classNames(style.block, active && style.active) }>
             <div className={classNames(style['top-word'])}>
